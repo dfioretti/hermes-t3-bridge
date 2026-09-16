@@ -1,0 +1,29 @@
+{
+  "name": "hermes-t3-bridge",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "hermes-t3-bridge": "./src/server.ts"
+  },
+  "scripts": {
+    "postinstall": "node scripts/sync-t3-upstream.mjs",
+    "sync:t3": "node scripts/sync-t3-upstream.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "start": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "effect": "4.0.0-rc.112",
+    "tsx": "^4.20.6",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.14"
+  }
+}
